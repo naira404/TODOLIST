@@ -1,0 +1,202 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.App{
+  padding: 0;margin: 0;left: 0;right: 0;top: 0;
+  background-image: url('../todo/images/pexels-jessbaileydesign-1097930.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;width: 100%;
+  overflow: hidden;
+  scroll-behavior:unset;
+}
+.todo{
+  border: 1px solid rgb(228, 197, 144);
+  border-radius: 20px;
+  margin: auto  ;
+  width: 75%;
+}
+.contain{
+  display: flex;
+  flex-direction: column;
+
+}
+.contain ul li{
+  width: 180px;
+  overflow-wrap:break-word ;
+  list-style-type: "📌";
+  cursor: pointer;
+}
+.done{
+  text-decoration: line-through;
+}
+.d{
+  list-style-type: "🗑️";
+  cursor: pointer;
+}
+.item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* <!-- HTML !-->
+<button class="button-89" role="button">Button 89</button> */
+
+/* CSS */
+.button-89 {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #373B44;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 50%;
+  margin: auto;
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
+}
+/* App.css */
+
+/* Styling the input box */
+input {
+  width: 100%;                /* Make the input box take up full width */
+  padding: 10px;              /* Add padding inside the input box */
+  margin-bottom: 10px;        /* Add some space below the input box */
+  border: 1px solid #ccc;     /* Light gray border around the input box */
+  border-radius: 25px;        /* Rounded corners for a smooth look */
+  font-size: 16px;            /* Increase font size for readability */
+  outline: none;              /* Remove the default outline on focus */
+  box-sizing: border-box;     /* Ensure padding doesn't affect total width */
+  transition: all 0.3s ease;  /* Smooth transition for border color and box shadow */
+}
+
+input:focus {
+  border-color: #007BFF;      /* Change border color to a blue shade on focus */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);  /* Add a subtle blue glow on focus */
+}
+
+input::placeholder {
+  color: #999;                /* Light gray placeholder text color */
+  font-style: italic;         /* Italicize the placeholder text */
+}
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;          /* Width of the form */
+  margin: 0 auto;        /* Center the form horizontally */
+  padding: 20px;         /* Add padding inside the form */
+  border-radius: 10px;   /* Rounded corners */
+  background-color: #f7f7f7;  /* Light background for form */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+}
+
+/* Styling the input fields */
+input {
+  width: 100%;                /* Make the input box take up full width */
+  padding: 10px;              /* Add padding inside the input box */
+  margin-bottom: 15px;        /* Add space below each input */
+  border: 1px solid #ccc;     /* Light gray border around the input box */
+  border-radius: 25px;        /* Rounded corners for a smooth look */
+  font-size: 16px;            /* Increase font size for readability */
+  outline: none;              /* Remove default outline */
+  box-sizing: border-box;     /* Ensure padding doesn't affect total width */
+  transition: all 0.3s ease;  /* Smooth transition for border and shadow */
+}
+
+input:focus {
+  border-color: #007BFF;      /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);  /* Add a subtle blue glow */
+}
+
+/* Placeholder style */
+input::placeholder {
+  color: #999;                /* Light gray placeholder text */
+  font-style: italic;         /* Italicize the placeholder */
+}
+
+/* Button Styles */
+button {
+  padding: 10px;
+  background-color: #4CAF50;  /* Green background */
+  color: white;               /* White text */
+  border: none;               /* No border */
+  border-radius: 25px;        /* Rounded corners for the button */
+  font-size: 16px;            /* Increase font size */
+  cursor: pointer;            /* Show pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth background color change */
+}
+
+button:hover {
+  background-color: #45a049;  /* Darker green on hover */
+}
+
+/* Optional styling for success/error messages */
+.success {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
