@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import App from '../App.css';
 
 function Register() {
+  const [username, setUsername] = useState('');  // New state for username
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -15,7 +16,7 @@ function Register() {
     try {
       // Firebase function to create user with email and password
       await createUserWithEmailAndPassword(auth, email, password);
-      setSuccess('Account created successfully!');
+      setSuccess(`Account created successfully for ${username}!`); // Success message with username
       setError('');
     } catch (err) {
       setError(err.message);
@@ -29,6 +30,14 @@ function Register() {
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {success && <p style={{ color: 'green' }}>{success}</p>}
       <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={username}                           // Bind username input
+          onChange={(e) => setUsername(e.target.value)} // Update username state
+          placeholder="Username"
+          required
+        />
+        <br />
         <input
           type="email"
           value={email}
