@@ -4,7 +4,7 @@ import { auth } from './component/firebaseConfig';
 import ToDoList from './component/ToDoList';
 import Login from './component/Login';
 import Register from './component/Register';  // Import the Register component
-
+import './App.css'; 
 function App() {
   const [user, setUser] = useState(null);
   const [isRegistering, setIsRegistering] = useState(false); // Track if user is registering
@@ -18,9 +18,9 @@ function App() {
 
   return (
     <div>
-      {user ? (
-        <ToDoList />
-      ) : (
+      {/* { {user ? (
+      <ToDoList />
+      ) : ( }
         <>
           {isRegistering ? (
             <Register />
@@ -31,7 +31,8 @@ function App() {
             {isRegistering ? 'Already have an account? Login' : 'No account? Register here'}
           </button>
         </>
-      )}
+      ) */}
+       <ToDoList />
     </div>
   );
 }
